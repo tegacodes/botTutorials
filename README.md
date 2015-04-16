@@ -14,7 +14,7 @@ Your account will be banned, so make sure to use alt accounts.
 
 So I would recommend doing something interesting with the data, over making something that is chatty. Bots that do status updates are ok.
 
-The twitter API also has rate limits as outlined here.
+The twitter API also has rate limits as [outlined here](https://dev.twitter.com/rest/public/rate-limiting).
 
 ##Dependencies
 
