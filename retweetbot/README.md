@@ -81,11 +81,11 @@ From our code the POST request is a retweet request:
 `//  retweet a tweet with id '343360866131001345'  
 
 //  
-T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {  \n
+T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {  
 
-  //whatever you want to happen when an error happens go here  \n
+  //whatever you want to happen when an error happens go here  
 
-  console.log(data)  \n
+  console.log(data)
 })`  
 
 POST requires 3 arguments, the first determines whether it is a status update or retweet and requires the user id if it is a retweet, the second can be left blank, and the third is an error function as before.  
