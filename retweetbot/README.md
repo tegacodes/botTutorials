@@ -78,7 +78,7 @@ The twitter POST request can be made in a few ways depending on what type of pos
 
 From our code the POST request is a retweet request:
 
-`//  retweet a tweet with id '343360866131001345'  
+`//  retweet a tweet with id "343360866131001345"   
 
 //  
 T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {  
