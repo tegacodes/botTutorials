@@ -3,7 +3,7 @@ Node twitter bot examples
 
 Twitter examples for the Social Software elective at SUNY Purchase 2015.
 
-##YO YO LISTEN UP
+##Yo Yo Listen Up
 
 Twitter does not recognize artificial intelligences and a legitimate use of its service. Things that will get you banned:
 
@@ -13,6 +13,8 @@ writing the same thing over and over, or very similar variants of stuff
 Your account will be banned, so make sure to use alt accounts.
 
 So I would recommend doing something interesting with the data, over making something that is chatty. Bots that do status updates are ok.
+
+The twitter API also has rate limits as outlined here.
 
 ##Dependencies
 
