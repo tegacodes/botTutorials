@@ -16,7 +16,7 @@ So I would recommend doing something interesting with the data, over making some
 
 ##Dependencies
 
-node.js (brew install node)
+[node.js] (https://nodejs.org/) (brew install node)
 ##Getting the code
 
 In the command line, navigate to where you want this folder and then type:
