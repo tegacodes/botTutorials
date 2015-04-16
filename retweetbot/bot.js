@@ -1,4 +1,4 @@
-// Our Twitter library
+//The Twitter library
 var Twit = require('twit');
 
 // We need to include our configuration file
