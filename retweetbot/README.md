@@ -1,4 +1,4 @@
-#ExampleBot
+#RetweetBot
 
 This bot retweets the latest tweet using the "#mediaarts" hashtag. It attempts to retweet once per hour.
 
@@ -81,15 +81,15 @@ From our code the POST request is a retweet request:
 `//  retweet a tweet with id '343360866131001345'  
 
 //  
-T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {  
+T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {  \n
 
-  //whatever you want to happen when an error happens go here  
+  //whatever you want to happen when an error happens go here  \n
 
-  console.log(data)  
+  console.log(data)  \n
 })`  
 
 POST requires 3 arguments, the first determines whether it is a status update or retweet and requires the user id if it is a retweet, the second can be left blank, and the third is an error function as before.  
 
-Finally the last two lines in bot.js are calling the retweetLatest() function which will run this function once. Then a timer is set that will call this function every hour. You can call functions at time intervals by using the javascript [setInterval function.](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/timers) 
+Finally the last two lines in bot.js are calling the retweetLatest() function which will run this function once. Then a timer is set that will call this function every hour. You can call functions at time intervals by using the javascript [setInterval function.](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/timers)
 
 'setInterval(function () {alert("Hello")}, 3000);'
