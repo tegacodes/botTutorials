@@ -1,0 +1,13 @@
+{
+  "name": "retweetbot",
+  "version": "1.0.0",
+  "description": "imagebot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "node-rest-client": "^1.4.1",
+    "twit": "^1.1.18"
+  }
+}

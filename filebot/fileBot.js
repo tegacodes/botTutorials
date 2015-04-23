@@ -1,11 +1,7 @@
 // We can get command line arguments in a node program
 // Here we're checking to make sure we've typed three things (the last being the filename)
-if (process.argv.length < 2) {
-  console.log('Oops, you forgot to pass in a text file.');
-  process.exit(1);
-}
 
-//LIBRARIES
+//LOAD MODULES
 // Our Twitter library
 var Twit = require('twit');
 
@@ -65,6 +61,36 @@ function splitSentences(text){
 
 //read file from within its folder
 var auto_tweet = function() {
+  console.log("auto_tweet");
+	// tweets are only loaded once. If you change the file, restart
+  fs.readFile(filename,"utf8", function(err,data) {
+    if (err){
+			throw err;
+		}
+	//	data= data.replace(/^\s*[\r\n]/gm,"");
+		//split string into array
+		tweets = splitSentences(data);
+		//get a random index of the array
+		currentTweet=randIndex(tweets);
+		var editTweet;
+		//get the first 140 characters
+		for(var i=0;i<140;i++){
+			if(i==0){
+				editTweet = currentTweet.charAt(i);
+			}else{
+				editTweet = editTweet+currentTweet.charAt(i);
+			}
+		}
+	//	console.log(currentTweet);
+		console.log(editTweet);
+		//call makeTweet function to make tweet
+		makeTweet(editTweet);
+  });
+}
+
+
+//read file from within its folder
+function auto_tweet() {
   console.log("auto_tweet");
 	// tweets are only loaded once. If you change the file, restart
   fs.readFile(filename,"utf8", function(err,data) {
