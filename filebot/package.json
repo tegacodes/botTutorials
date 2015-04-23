@@ -1,0 +1,13 @@
+{
+  "name": "filebot",
+  "version": "1.0.0",
+  "description": "botbot",
+  "main": "filebot.js",
+  "scripts": {
+    "start": "node filebot.js"
+  },
+  "dependencies": {
+    "node-rest-client": "^1.4.1",
+    "twit": "^1.1.18"
+  }
+}

@@ -1,6 +1,6 @@
 // We can get command line arguments in a node program
 // Here we're checking to make sure we've typed three things (the last being the filename)
-if (process.argv.length < 3) {
+if (process.argv.length < 2) {
   console.log('Oops, you forgot to pass in a text file.');
   process.exit(1);
 }
@@ -19,7 +19,7 @@ var fs = require('fs');
 var T = new Twit(require('./config.js'));
 
 //pull file name from second argument
-var filename = process.argv[2];
+var filename = "manifesto.txt";
 
 //some variables to hold our tweets
 var tweets;
@@ -100,4 +100,5 @@ auto_tweet();
 // ...and then random interval between 1 minute and 10 minutes after that.
 //Time here is in milliseconds, so
 // 1000 ms = 1 second, 1 sec * 60 = 1 min, 1 min * 60 = 1 hour --> 1000 * 60 * 60
-setInterval(auto_tweet, getRandomInt(1000 * 60, 10000*60));
+//getRandomInt(1000 * 60, 10000*60)
+setInterval(auto_tweet,1000*60 );
