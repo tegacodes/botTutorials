@@ -14,7 +14,7 @@ var fs = require('fs');
 // we can use functions from the Twit library by calling T.nameOfFunction(arguments)
 var T = new Twit(require('./config.js'));
 
-//pull file name from second argument
+//enter file name
 var filename = "manifesto.txt";
 
 //some variables to hold our tweets
@@ -32,8 +32,7 @@ function makeTweet(status) {
 			if (error) {
 				console.log('There was an error with Twitter:', error);
 			}
-		}
-	)
+		}) //close post function
 }
 
 // Function to get a random index number of an array
@@ -60,49 +59,22 @@ function splitSentences(text){
 }
 
 //read file from within its folder
-var auto_tweet = function() {
-  console.log("auto_tweet");
-	// tweets are only loaded once. If you change the file, restart
-  fs.readFile(filename,"utf8", function(err,data) {
-    if (err){
-			throw err;
-		}
-	//	data= data.replace(/^\s*[\r\n]/gm,"");
-		//split string into array
-		tweets = splitSentences(data);
-		//get a random index of the array
-		currentTweet=randIndex(tweets);
-		var editTweet;
-		//get the first 140 characters
-		for(var i=0;i<140;i++){
-			if(i==0){
-				editTweet = currentTweet.charAt(i);
-			}else{
-				editTweet = editTweet+currentTweet.charAt(i);
-			}
-		}
-	//	console.log(currentTweet);
-		console.log(editTweet);
-		//call makeTweet function to make tweet
-		makeTweet(editTweet);
-  });
-}
-
-
-//read file from within its folder
 function auto_tweet() {
   console.log("auto_tweet");
 	// tweets are only loaded once. If you change the file, restart
-  fs.readFile(filename,"utf8", function(err,data) {
-    if (err){
-			throw err;
+  fs.readFile(filename,"utf8", function(error,data) {
+    if (error){
+			console.log('Error reading file', error);
+
 		}
+	if(data){
 	//	data= data.replace(/^\s*[\r\n]/gm,"");
 		//split string into array
 		tweets = splitSentences(data);
 		//get a random index of the array
 		currentTweet=randIndex(tweets);
-		var editTweet;
+		//variable to hold our tweet
+		var editTweet =" ";
 		//get the first 140 characters
 		for(var i=0;i<140;i++){
 			if(i==0){
@@ -112,11 +84,14 @@ function auto_tweet() {
 			}
 		}
 	//	console.log(currentTweet);
-		console.log(editTweet);
+		console.log("editTweet="+editTweet);
 		//call makeTweet function to make tweet
 		makeTweet(editTweet);
-  });
-}
+	}//close if statement
+})//close readfile
+
+}//close auto_tweet function
+
 
 
 //call the auto_tweet function

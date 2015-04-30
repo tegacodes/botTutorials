@@ -2,9 +2,9 @@
   "name": "filebot",
   "version": "1.0.0",
   "description": "botbot",
-  "main": "filebot.js",
+  "main": "bot.js",
   "scripts": {
-    "start": "node filebot.js"
+    "start": "node bot.js"
   },
   "dependencies": {
     "node-rest-client": "^1.4.1",
